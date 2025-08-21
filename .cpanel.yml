@@ -1,1 +1,12 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYMENT_BRANCH="master"
+    - export DEPLOYMENT_DIRECTORY="public_html"
 
+  default:
+    - task: deploy
+      branch: master
+      commands:
+        - echo "Deploying files to public_html..."
+        - cp -r ./* $DEPLOYMENT_DIRECTORY/
